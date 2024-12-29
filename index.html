@@ -17,8 +17,10 @@
 <div id="content-zh" class="content">
     <h1>✨ ApexFix | 阿德莱德家庭维修与翻新服务 ✨</h1>
     <div style="text-align: center; margin: 20px 0;">
-        <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
-        <p>Scan the QR code to contact us on WeChat!</p>
+        <a href="https://zh.wikipedia.org/wiki/ApexFix" target="_blank">
+            <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
+        </a>
+        <p>点击图片跳转至我们的维基百科页面</p>
     </div>
     <p style="text-align: center;">我们专注于家庭维修和翻新，价格透明，服务周到，为您打造更舒适的家居环境！</p>
     <div style="text-align: center;">
@@ -63,8 +65,10 @@
 <div id="content-en" class="content hidden">
     <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
     <div style="text-align: center; margin: 20px 0;">
-        <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
-        <p>Scan the QR code to contact us on WeChat!</p>
+        <a href="https://en.wikipedia.org/wiki/ApexFix" target="_blank">
+            <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
+        </a>
+        <p>Click the image to visit our Wikipedia page</p>
     </div>
     <p style="text-align: center;">We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!</p>
     <div style="text-align: center;">
@@ -108,7 +112,20 @@
 
 <script>
 function toggleBusinessHours(lang) {
+    const button = document.querySelector('button[onclick="toggleBusinessHours(\'' + lang + '\')"]');
     const section = document.getElementById(`business-hours-${lang}`);
+    button.innerText = "Loading...";
+    button.style.backgroundColor = "#0056b3";
+    setTimeout(() => {
+        if (section) {
+            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+            button.innerText = "营业时间";
+            button.style.backgroundColor = "#007BFF";
+        } else {
+            console.error(`Section for business hours (${lang}) not found.`);
+        }
+    }, 100);
+}`);
     if (section) {
         section.style.display = section.style.display === 'none' ? 'block' : 'none';
     } else {
@@ -124,7 +141,12 @@ function switchLanguage(lang) {
 }
 
 function navigateToWorkHistory() {
-    window.location.href = 'work-history.html';
+    const button = document.querySelector('button[onclick="navigateToWorkHistory()"]');
+    button.innerText = "Loading...";
+    button.style.backgroundColor = "#0056b3";
+    setTimeout(() => {
+        window.location.href = 'https://github.com/apexfix/apexfix/wiki';
+    }, 100);
 }
 </script>
 
