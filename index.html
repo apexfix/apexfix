@@ -1,164 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApexFix | Multilingual Services</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script defer src="js/scripts.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            margin: 20px;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .language-switch {
+            text-align: right;
+            margin: 10px 0;
+        }
+        .language-switch a {
+            text-decoration: none;
+            margin-left: 10px;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .note {
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.querySelector(`#content-${lang}`).classList.remove('hidden');
+        }
+    </script>
 </head>
 <body>
 
 <div class="language-switch">
-    <a href="javascript:void(0)" onclick="switchLanguage('zh')">English</a> | 
-    <a href="javascript:void(0)" onclick="switchLanguage('en')">中文</a>
+    <a href="javascript:void(0)" onclick="switchLanguage('zh')">中文</a> | 
+    <a href="javascript:void(0)" onclick="switchLanguage('en')">English</a>
 </div>
 
-<div id="content-en" class="content hidden">
-    <!-- Translated English content -->
-    <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
-    <p style="text-align: center;">We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!</p>
-    
-    <h2>📋 Scope of Services & Pricing</h2>
-    
-    <h3>🛠️ Repair Services</h3>
-    <table>
-        <tr>
-            <th>Service</th>
-            <th>Price</th>
-            <th>Remarks</th>
-        </tr>
-        <tr>
-            <td>Wall Repairs</td>
-            <td>$200+</td>
-            <td>Includes painting</td>
-        </tr>
-        <tr>
-            <td>Floor Scratch Repairs</td>
-            <td>$80/board</td>
-            <td>On-site color matching, minimum 2 boards</td>
-        </tr>
-        <tr>
-            <td>Wooden Door Repairs</td>
-            <td>$200+</td>
-            <td>Includes filling and painting</td>
-        </tr>
-        <tr>
-            <td>Tile Corrosion Repairs</td>
-            <td>$240/sqm</td>
-            <td>Minimum 2 sqm</td>
-        </tr>
-    </table>
-    <p class="note">💡 Prices are for reference only and may vary based on the situation. Contact us for other repair needs!</p>
-    
-    <h3>🚰 Drainage Services</h3>
-    <table>
-        <tr>
-            <th>Service</th>
-            <th>Price</th>
-            <th>Remarks</th>
-        </tr>
-        <tr>
-            <td>Kitchen Sink Drainage</td>
-            <td>$180+</td>
-            <td>Single blockage, variation within $60</td>
-        </tr>
-        <tr>
-            <td>Toilet Unblocking</td>
-            <td>$180+</td>
-            <td>Single blockage, variation within $60</td>
-        </tr>
-        <tr>
-            <td>Bathroom Basin Drainage</td>
-            <td>$150+</td>
-            <td>Single blockage, variation within $60</td>
-        </tr>
-        <tr>
-            <td>Main Drainage Pipe</td>
-            <td>$300+</td>
-            <td>Includes camera inspection and high-pressure cleaning</td>
-        </tr>
-    </table>
-    <p class="note">💡 We offer professional solutions for all types of blockages, from simple to complex issues!</p>
-    
-    <h3>🔧 Installation Services</h3>
-    <table>
-        <tr>
-            <th>Service</th>
-            <th>Price</th>
-            <th>Remarks</th>
-        </tr>
-        <tr>
-            <td>Interior Door Installation</td>
-            <td>$150/door</td>
-            <td>$230 for two doors, $100/door for three or more</td>
-        </tr>
-        <tr>
-            <td>Interior Door Lock Installation</td>
-            <td>$150+</td>
-            <td>Price includes the lock</td>
-        </tr>
-        <tr>
-            <td>Main Door Electronic Lock</td>
-            <td>$200+</td>
-            <td>Labor only</td>
-        </tr>
-        <tr>
-            <td>IKEA Furniture Assembly</td>
-            <td>$60/hour</td>
-            <td>Minimum 3 hours</td>
-        </tr>
-        <tr>
-            <td>Custom Furniture Assembly</td>
-            <td>Quoted based on images</td>
-            <td>Price varies by complexity</td>
-        </tr>
-        <tr>
-            <td>Gazebo Assembly</td>
-            <td>$400+</td>
-            <td>Quoted based on images</td>
-        </tr>
-    </table>
-    <p class="note">💡 Contact us for any installation needs, even if not listed above!</p>
-    
-    <h3>🪚 Polishing & Renovation Services</h3>
-    <table>
-        <tr>
-            <th>Service</th>
-            <th>Price</th>
-            <th>Remarks</th>
-        </tr>
-        <tr>
-            <td>Kitchen Counter Polishing</td>
-            <td>$200+</td>
-            <td>Price varies by material and size</td>
-        </tr>
-        <tr>
-            <td>Tile Corrosion Repairs</td>
-            <td>$240/sqm</td>
-            <td>Minimum 2 sqm</td>
-        </tr>
-        <tr>
-            <td>Full House Tile Polishing</td>
-            <td>Quoted on-site</td>
-            <td>Based on size and complexity</td>
-        </tr>
-        <tr>
-            <td>Wooden Floor Polishing</td>
-            <td>Quoted on-site</td>
-            <td>Based on size and damage</td>
-        </tr>
-    </table>
-    <p class="note">💡 We provide tailored solutions for both partial and full renovations!</p>
-    
-    <h2>📞 Contact Us</h2>
-    <p>📞 <strong>Phone:</strong> <span class="highlight">0492 950 816</span></p>
-    <p>✉️ W rong>Email:</strong> <span class="highlight">apexfixau@gmail.com</span></p>
-    <p>🌐 <strong>Website:</strong> <a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a></p>
-   
-</div>
-
-<div id="content-en" class="content hidden">
+<!-- Chinese content -->
+<div id="content-zh" class="content">
+    <!-- Original Chinese content from the user's file -->
+    <!-- Inserted dynamically to ensure alignment -->
     <h1>✨ ApexFix | 阿德莱德家庭维修与翻新服务 ✨</h1>
     <p style="text-align: center;">我们专注于家庭维修和翻新，价格透明，服务周到，为您打造更舒适的家居环境！</p>
     
@@ -308,6 +222,151 @@
     <p>📞 <strong>联系电话：</strong><span class="highlight">0492 950 816</span></p>
     <p>✉️ <strong>邮箱：</strong><span class="highlight">apexfixau@gmail.com</span></p>
     <p>🌐 <strong>官方网站：</strong><a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a></p>
+    
+</div>
+
+<!-- English content -->
+<div id="content-en" class="content hidden">
+    <!-- Translated English content -->
+    <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
+    <p style="text-align: center;">We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!</p>
+    
+    <h2>📋 Scope of Services & Pricing</h2>
+    
+    <h3>🛠️ Repair Services</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Remarks</th>
+        </tr>
+        <tr>
+            <td>Wall Repairs</td>
+            <td>$200+</td>
+            <td>Includes painting</td>
+        </tr>
+        <tr>
+            <td>Floor Scratch Repairs</td>
+            <td>$80/board</td>
+            <td>On-site color matching, minimum 2 boards</td>
+        </tr>
+        <tr>
+            <td>Wooden Door Repairs</td>
+            <td>$200+</td>
+            <td>Includes filling and painting</td>
+        </tr>
+        <tr>
+            <td>Tile Corrosion Repairs</td>
+            <td>$240/sqm</td>
+            <td>Minimum 2 sqm</td>
+        </tr>
+    </table>
+    <p class="note">💡 Prices are for reference only and may vary based on the situation. Contact us for other repair needs!</p>
+    
+    <h3>🚰 Drainage Services</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Remarks</th>
+        </tr>
+        <tr>
+            <td>Kitchen Sink Drainage</td>
+            <td>$180+</td>
+            <td>Single blockage, variation within $60</td>
+        </tr>
+        <tr>
+            <td>Toilet Unblocking</td>
+            <td>$180+</td>
+            <td>Single blockage, variation within $60</td>
+        </tr>
+        <tr>
+            <td>Bathroom Basin Drainage</td>
+            <td>$150+</td>
+            <td>Single blockage, variation within $60</td>
+        </tr>
+        <tr>
+            <td>Main Drainage Pipe</td>
+            <td>$300+</td>
+            <td>Includes camera inspection and high-pressure cleaning</td>
+        </tr>
+    </table>
+    <p class="note">💡 We offer professional solutions for all types of blockages, from simple to complex issues!</p>
+    
+    <h3>🔧 Installation Services</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Remarks</th>
+        </tr>
+        <tr>
+            <td>Interior Door Installation</td>
+            <td>$150/door</td>
+            <td>$230 for two doors, $100/door for three or more</td>
+        </tr>
+        <tr>
+            <td>Interior Door Lock Installation</td>
+            <td>$150+</td>
+            <td>Price includes the lock</td>
+        </tr>
+        <tr>
+            <td>Main Door Electronic Lock</td>
+            <td>$200+</td>
+            <td>Labor only</td>
+        </tr>
+        <tr>
+            <td>IKEA Furniture Assembly</td>
+            <td>$60/hour</td>
+            <td>Minimum 3 hours</td>
+        </tr>
+        <tr>
+            <td>Custom Furniture Assembly</td>
+            <td>Quoted based on images</td>
+            <td>Price varies by complexity</td>
+        </tr>
+        <tr>
+            <td>Gazebo Assembly</td>
+            <td>$400+</td>
+            <td>Quoted based on images</td>
+        </tr>
+    </table>
+    <p class="note">💡 Contact us for any installation needs, even if not listed above!</p>
+    
+    <h3>🪚 Polishing & Renovation Services</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Remarks</th>
+        </tr>
+        <tr>
+            <td>Kitchen Counter Polishing</td>
+            <td>$200+</td>
+            <td>Price varies by material and size</td>
+        </tr>
+        <tr>
+            <td>Tile Corrosion Repairs</td>
+            <td>$240/sqm</td>
+            <td>Minimum 2 sqm</td>
+        </tr>
+        <tr>
+            <td>Full House Tile Polishing</td>
+            <td>Quoted on-site</td>
+            <td>Based on size and complexity</td>
+        </tr>
+        <tr>
+            <td>Wooden Floor Polishing</td>
+            <td>Quoted on-site</td>
+            <td>Based on size and damage</td>
+        </tr>
+    </table>
+    <p class="note">💡 We provide tailored solutions for both partial and full renovations!</p>
+    
+    <h2>📞 Contact Us</h2>
+    <p>📞 <strong>Phone:</strong> <span class="highlight">0492 950 816</span></p>
+    <p>✉️ W rong>Email:</strong> <span class="highlight">apexfixau@gmail.com</span></p>
+    <p>🌐 <strong>Website:</strong> <a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a></p>
     
 </div>
 
