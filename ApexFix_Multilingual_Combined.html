@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexFix | Multilingual Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            margin: 20px;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .language-switch {
+            text-align: right;
+            margin: 10px 0;
+        }
+        .language-switch a {
+            text-decoration: none;
+            margin-left: 10px;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .note {
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.querySelector(`#content-${lang}`).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+
+<div class="language-switch">
+    <a href="javascript:void(0)" onclick="switchLanguage('zh')">中文</a> | 
+    <a href="javascript:void(0)" onclick="switchLanguage('en')">English</a>
+</div>
+
+<!-- Chinese content -->
+<div id="content-zh" class="content">
+    <!-- Original Chinese content from the user's file -->
+    <!-- Inserted dynamically to ensure alignment -->
+    <h1>✨ ApexFix | 阿德莱德家庭维修与翻新服务 ✨</h1>
+    <p style="text-align: center;">我们专注于家庭维修和翻新，价格透明，服务周到，为您打造更舒适的家居环境！</p>
+    
+    <h2>📋 服务范围与价格详情</h2>
+    
+    <h3>🛠️ 修补类</h3>
+    <table>
+        <tr>
+            <th>服务项目</th>
+            <th>价格</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td>墙面修复</td>
+            <td>$200 起</td>
+            <td>含油漆</td>
+        </tr>
+        <tr>
+            <td>地板划痕修复</td>
+            <td>$80/块</td>
+            <td>现场调色，最低2块起步</td>
+        </tr>
+        <tr>
+            <td>木门补洞划痕修复</td>
+            <td>$200 起</td>
+            <td>填洞加油漆</td>
+        </tr>
+        <tr>
+            <td>瓷砖渗脏腐蚀修复</td>
+            <td>$240/平米</td>
+            <td>起步2平米</td>
+        </tr>
+    </table>
+    <p class="note">💡 价格仅供参考，实际费用可能根据情况调整。如有其他修补需求，欢迎随时咨询。</p>
+    
+    <h3>🚰 疏通类</h3>
+    <table>
+        <tr>
+            <th>服务项目</th>
+            <th>价格</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td>厨房洗菜池疏通</td>
+            <td>$180 起</td>
+            <td>单一位置堵塞，浮动范围不超过 $60</td>
+        </tr>
+        <tr>
+            <td>马桶疏通</td>
+            <td>$180 起</td>
+            <td>单一位置堵塞，浮动范围不超过 $60</td>
+        </tr>
+        <tr>
+            <td>浴室洗漱盆疏通</td>
+            <td>$150 起</td>
+            <td>单一位置堵塞，浮动范围不超过 $60</td>
+        </tr>
+        <tr>
+            <td>全屋下水道堵塞疏通</td>
+            <td>$300 起</td>
+            <td>包含内窥摄像机检查及高压清洗机清洗</td>
+        </tr>
+    </table>
+    <p class="note">💡 无论是普通堵塞还是复杂管道问题，我们都有专业的解决方案！</p>
+    
+    <h3>🔧 安装类</h3>
+    <table>
+        <tr>
+            <th>服务项目</th>
+            <th>价格</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td>室内门安装</td>
+            <td>$150/扇</td>
+            <td>两扇 $230；三扇及以上 $100/扇</td>
+        </tr>
+        <tr>
+            <td>室内门门锁安装</td>
+            <td>$150 起</td>
+            <td>价格包含门锁</td>
+        </tr>
+        <tr>
+            <td>大门电子锁安装</td>
+            <td>$200 起</td>
+            <td>仅人工费用</td>
+        </tr>
+        <tr>
+            <td>宜家家具安装</td>
+            <td>$60/小时</td>
+            <td>最低3小时起</td>
+        </tr>
+        <tr>
+            <td>中国或其他家具安装</td>
+            <td>需看图报价</td>
+            <td>根据复杂程度调整报价</td>
+        </tr>
+        <tr>
+            <td>澳洲本地橱柜安装</td>
+            <td>需现场报价</td>
+            <td>根据实际情况评估</td>
+        </tr>
+        <tr>
+            <td>中国橱柜安装</td>
+            <td>$130/小时起</td>
+            <td>视复杂程度调整</td>
+        </tr>
+        <tr>
+            <td>电动/手动凉亭安装</td>
+            <td>$400 起</td>
+            <td>需看图报价</td>
+        </tr>
+    </table>
+    <p class="note">💡 如果有其他安装需求，欢迎咨询，我们会为您提供专业建议和服务！</p>
+    
+    <h3>🪚 打磨翻新类</h3>
+    <table>
+        <tr>
+            <th>服务项目</th>
+            <th>价格</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td>厨房台面打磨翻新抛光</td>
+            <td>$200 起</td>
+            <td>根据台面材质和面积调整价格</td>
+        </tr>
+        <tr>
+            <td>瓷砖渗脏腐蚀修复</td>
+            <td>$240/平米</td>
+            <td>起步2平米</td>
+        </tr>
+        <tr>
+            <td>全屋瓷砖打磨抛光翻新</td>
+            <td>需上门报价</td>
+            <td>根据面积与施工复杂度评估</td>
+        </tr>
+        <tr>
+            <td>木地板打磨翻新</td>
+            <td>需上门报价</td>
+            <td>根据面积与损坏程度提供具体报价</td>
+        </tr>
+    </table>
+    <p class="note">💡 无论是局部翻新还是整体打磨，我们都能提供满意的解决方案！</p>
+    
+    <h2>📞 联系我们</h2>
+    <p>📞 <strong>联系电话：</strong><span class="highlight">0492 950 816</span></p>
+    <p>✉️ <strong>邮箱：</strong><span class="highlight">apexfixau@gmail.com</span></p>
+    <p>🌐 <strong>官方网站：</strong><a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a></p>
+    
+</div>
+
+<!-- English content -->
+<div id="content-en" class="content hidden">
+    <!-- Translated English content -->
+    <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
+    <p style="text-align: center;">We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!</p>
+    
+    <h2>📋 Scope of Services & Pricing</h2>
+    
+    <h3>🛠️ Repair Services</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Remarks</th>
+        </tr>
+        <tr>
+            <td>Wall Repairs</td>
+            <td>$200+</td>
+            <td>Includes painting</td>
+        </tr>
+        <tr>
+            <td>Floor Scratch Repairs</td>
+            <td>$80/board</td>
+            <td>On-site color matching, minimum 2 boards</td>
+        </tr>
+        <tr>
+            <td>Wooden Door Repairs</td>
+            <td>$200+</td>
+            <td>Includes filling and painting</td>
+        </tr>
+        <tr>
+            <td>Tile Corrosion Repairs</td>
+            <td>$240/sqm</td>
+            <td>Minimum 2 sqm</td>
+        </tr>
+    </table>
+    <p class="note">💡 Prices are for reference only and may vary based on the situation. Contact us for other repair needs!</p>
+    
+    <h3>🚰 Drainage Services</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Remarks</th>
+        </tr>
+        <tr>
+            <td>Kitchen Sink Drainage</td>
+            <td>$180+</td>
+            <td>Single blockage, variation within $60</td>
+        </tr>
+        <tr>
+            <td>Toilet Unblocking</td>
+            <td>$180+</td>
+            <td>Single blockage, variation within $60</td>
+        </tr>
+        <tr>
+            <td>Bathroom Basin Drainage</td>
+            <td>$150+</td>
+            <td>Single blockage, variation within $60</td>
+        </tr>
+        <tr>
+            <td>Main Drainage Pipe</td>
+            <td>$300+</td>
+            <td>Includes camera inspection and high-pressure cleaning</td>
+        </tr>
+    </table>
+    <p class="note">💡 We offer professional solutions for all types of blockages, from simple to complex issues!</p>
+    
+    <h3>🔧 Installation Services</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Remarks</th>
+        </tr>
+        <tr>
+            <td>Interior Door Installation</td>
+            <td>$150/door</td>
+            <td>$230 for two doors, $100/door for three or more</td>
+        </tr>
+        <tr>
+            <td>Interior Door Lock Installation</td>
+            <td>$150+</td>
+            <td>Price includes the lock</td>
+        </tr>
+        <tr>
+            <td>Main Door Electronic Lock</td>
+            <td>$200+</td>
+            <td>Labor only</td>
+        </tr>
+        <tr>
+            <td>IKEA Furniture Assembly</td>
+            <td>$60/hour</td>
+            <td>Minimum 3 hours</td>
+        </tr>
+        <tr>
+            <td>Custom Furniture Assembly</td>
+            <td>Quoted based on images</td>
+            <td>Price varies by complexity</td>
+        </tr>
+        <tr>
+            <td>Gazebo Assembly</td>
+            <td>$400+</td>
+            <td>Quoted based on images</td>
+        </tr>
+    </table>
+    <p class="note">💡 Contact us for any installation needs, even if not listed above!</p>
+    
+    <h3>🪚 Polishing & Renovation Services</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Remarks</th>
+        </tr>
+        <tr>
+            <td>Kitchen Counter Polishing</td>
+            <td>$200+</td>
+            <td>Price varies by material and size</td>
+        </tr>
+        <tr>
+            <td>Tile Corrosion Repairs</td>
+            <td>$240/sqm</td>
+            <td>Minimum 2 sqm</td>
+        </tr>
+        <tr>
+            <td>Full House Tile Polishing</td>
+            <td>Quoted on-site</td>
+            <td>Based on size and complexity</td>
+        </tr>
+        <tr>
+            <td>Wooden Floor Polishing</td>
+            <td>Quoted on-site</td>
+            <td>Based on size and damage</td>
+        </tr>
+    </table>
+    <p class="note">💡 We provide tailored solutions for both partial and full renovations!</p>
+    
+    <h2>📞 Contact Us</h2>
+    <p>📞 <strong>Phone:</strong> <span class="highlight">0492 950 816</span></p>
+    <p>✉️ <strong>Email:</strong> <span class="highlight">apexfixau@gmail.com</span></p>
+    <p>🌐 <strong>Website:</strong> <a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a></p>
+    
+</div>
+
+</body>
+</html>
