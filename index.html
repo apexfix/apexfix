@@ -59,7 +59,47 @@
             <td>起步2平米</td>
         </tr>
     </table>
-    <p class="note">💡 价格仅供参考，实际费用可能根据情况调整。如有其他修补需求，欢迎随时咨询。</p>
+    <h3>🚰 疏通类</h3>
+    <table>
+        <tr>
+            <th>服务项目</th>
+            <th>价格</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td>厨房水槽疏通</td>
+            <td>$180 起</td>
+            <td>根据堵塞程度</td>
+        </tr>
+        <tr>
+            <td>浴室排水疏通</td>
+            <td>$150 起</td>
+            <td>根据实际情况</td>
+        </tr>
+        <tr>
+            <td>厕所疏通</td>
+            <td>$200 起</td>
+            <td>包含工具使用费用</td>
+        </tr>
+    </table>
+    <h3>🔧 安装类</h3>
+    <table>
+        <tr>
+            <th>服务项目</th>
+            <th>价格</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td>室内门安装</td>
+            <td>$250/扇</td>
+            <td>根据材料和复杂程度</td>
+        </tr>
+        <tr>
+            <td>浴室镜柜安装</td>
+            <td>$180 起</td>
+            <td>包含简单组装</td>
+        </tr>
+    </table>
 </div>
 
 <div id="content-en" class="content hidden">
@@ -107,7 +147,47 @@
             <td>Minimum 2 sqm</td>
         </tr>
     </table>
-    <p class="note">💡 Prices are for reference only and may vary based on the situation. Contact us for other repair needs!</p>
+    <h3>🚰 Drainage Services</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Remarks</th>
+        </tr>
+        <tr>
+            <td>Kitchen Sink Drainage</td>
+            <td>$180+</td>
+            <td>Based on blockage severity</td>
+        </tr>
+        <tr>
+            <td>Bathroom Drainage</td>
+            <td>$150+</td>
+            <td>Depends on situation</td>
+        </tr>
+        <tr>
+            <td>Toilet Unclogging</td>
+            <td>$200+</td>
+            <td>Includes tool fees</td>
+        </tr>
+    </table>
+    <h3>🔧 Installation Services</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Remarks</th>
+        </tr>
+        <tr>
+            <td>Interior Door Installation</td>
+            <td>$250/door</td>
+            <td>Depends on material and complexity</td>
+        </tr>
+        <tr>
+            <td>Bathroom Cabinet Installation</td>
+            <td>$180+</td>
+            <td>Includes simple assembly</td>
+        </tr>
+    </table>
 </div>
 
 <script>
@@ -125,12 +205,6 @@ function toggleBusinessHours(lang) {
             console.error(`Section for business hours (${lang}) not found.`);
         }
     }, 100);
-}`);
-    if (section) {
-        section.style.display = section.style.display === 'none' ? 'block' : 'none';
-    } else {
-        console.error(`Section for business hours (${lang}) not found.`);
-    }
 }
 
 function switchLanguage(lang) {
