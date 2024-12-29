@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApexFix | Adelaide Home Repair & Renovation Services</title>
+    <title>ApexFix | Multilingual Services</title>
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="js/scripts.js"></script>
 </head>
@@ -15,8 +15,6 @@
 </div>
 
 <div id="content-zh" class="content">
-    <!-- Original Chinese content from the user's file -->
-    <!-- Inserted dynamically to ensure alignment -->
     <h1>✨ ApexFix | 阿德莱德家庭维修与翻新服务 ✨</h1>
     <div style="text-align: center; margin: 20px 0;">
         <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
@@ -26,7 +24,7 @@
     <button style="display: block; margin: 10px auto; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px;" onclick="toggleBusinessHours('zh')">营业时间</button>
     <div id="business-hours-zh" style="display: none; text-align: center; margin-top: 10px;">
         <p>全天营业，节假日无附加费。</p>
-    </div>   
+    </div>
     <h2>📋 服务范围与价格详情</h2>
     
     <h3>🛠️ 修补类</h3>
@@ -176,12 +174,17 @@
     
 </div>
 
-<!-- English content -->
 <div id="content-en" class="content hidden">
-    <!-- Translated English content -->
     <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
+    <div style="text-align: center; margin: 20px 0;">
+        <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
+        <p>Scan the QR code to contact us on WeChat!</p>
+    </div>
     <p style="text-align: center;">We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!</p>
-    
+    <button style="display: block; margin: 10px auto; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px;" onclick="toggleBusinessHours('en')">Business Hours</button>
+    <div id="business-hours-en" style="display: none; text-align: center; margin-top: 10px;">
+        <p>Open 24/7. No additional fees on public holidays.</p>
+    </div>
     <h2>📋 Scope of Services & Pricing</h2>
     
     <h3>🛠️ Repair Services</h3>
@@ -318,8 +321,26 @@
     <p>📞 <strong>Phone:</strong> <span class="highlight">0492 950 816</span></p>
     <p>✉️ W rong>Email:</strong> <span class="highlight">apexfixau@gmail.com</span></p>
     <p>🌐 <strong>Website:</strong> <a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a></p>
-    
+   
 </div>
+
+<script>
+function toggleBusinessHours(lang) {
+    const section = document.getElementById(`business-hours-${lang}`);
+    if (section) {
+        section.style.display = section.style.display === 'none' ? 'block' : 'none';
+    } else {
+        console.error(`Section for business hours (${lang}) not found.`);
+    }
+}
+
+function switchLanguage(lang) {
+    document.querySelectorAll('.content').forEach(content => {
+        content.classList.add('hidden');
+    });
+    document.querySelector(`#content-${lang}`).classList.remove('hidden');
+}
+</script>
 
 </body>
 </html>
