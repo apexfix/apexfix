@@ -9,12 +9,12 @@
 </head>
 <body>
 
-<div class="language-switch">
-    <a href="javascript:void(0)" onclick="switchLanguage('zh')">中文</a> | 
-    <a href="javascript:void(0)" onclick="switchLanguage('en')">English</a>
+<div class="language-switch" style="text-align: center; margin-bottom: 20px;">
+    <button onclick="switchLanguage('zh')" id="lang-zh" style="margin: 0 10px; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; background-color: #ddd; color: black;">中文</button>
+    <button onclick="switchLanguage('en')" id="lang-en" style="margin: 0 10px; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; background-color: #0056b3; color: white;">English</button>
 </div>
 
-<div id="content-zh" class="content">
+<div id="content-zh" class="content hidden">
     <h1>✨ ApexFix | 阿德莱德家庭维修与翻新服务 ✨</h1>
     <div style="text-align: center; margin: 20px 0;">
             <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
@@ -185,7 +185,7 @@
     </table>
 </div>
 
-<div id="content-en" class="content hidden">
+<div id="content-en" class="content">
     <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
     <div style="text-align: center; margin: 20px 0;">
             <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
@@ -366,6 +366,14 @@ function switchLanguage(lang) {
     document.querySelectorAll('.content').forEach(content => {
         content.classList.add('hidden');
     });
+    document.querySelector(`#content-${lang}`).classList.remove('hidden');
+
+    // Update button styles
+    document.getElementById('lang-zh').style.backgroundColor = lang === 'zh' ? '#0056b3' : '#ddd';
+    document.getElementById('lang-zh').style.color = lang === 'zh' ? 'white' : 'black';
+    document.getElementById('lang-en').style.backgroundColor = lang === 'en' ? '#0056b3' : '#ddd';
+    document.getElementById('lang-en').style.color = lang === 'en' ? 'white' : 'black';
+});
     document.querySelector(`#content-${lang}`).classList.remove('hidden');
 }
 
