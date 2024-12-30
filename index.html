@@ -2,43 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>ApexFix | Adelaide Home Repair & Renovation Services</title>
   <link rel="stylesheet" href="css/styles.css" />
   <script defer src="js/scripts.js"></script>
+
   <style>
-    /* 通用样式示例，建议放入 styles.css */
-    
+    /* ===== 建议移动到独立的 styles.css 中 ===== */
+
+    /* 1. 页面整体背景：渐变 & 一些基础排版 */
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: #fafafa;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+      color: #333;
     }
-    .hidden {
-      display: none;
-    }
+
+    /* 2. 主要内容容器：居中，白底卡片样式，阴影 */
     .content {
       max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #fff;
-      margin-bottom: 40px; /* 预留底部空间 */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      border-radius: 4px;
+      margin: 40px auto;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 30px 40px;
+      position: relative; /* 为了更好地控制内部定位 */
     }
+
+    /* 标题与文字的基础样式 */
     h1, h2, h3 {
       color: #333;
-      margin-bottom: 10px;
     }
+    h1 {
+      margin-top: 0;
+      font-size: 1.8em;
+      text-align: center;
+    }
+    p {
+      line-height: 1.6;
+    }
+
+    /* 3. 语言切换：固定在右上角，带小阴影卡片背景 */
+    .language-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      background-color: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+
+    .language-switch button {
+      margin: 0 5px;
+      padding: 8px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* 4. 通用按钮样式 */
+    .common-button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      transition: background-color 0.2s ease;
+    }
+    .common-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* 5. 营业时间、业务范围等下方展开区域 */
+    #business-hours-zh,
+    #business-hours-en {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* 6. 表格样式：简单、干净 */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 15px 0;
+      margin: 25px 0;
     }
     th, td {
       border: 1px solid #ddd;
-      padding: 8px;
+      padding: 12px 10px;
       text-align: center;
+      font-size: 15px;
+    }
+    th {
+      background: #f9f9f9;
     }
     .note {
       font-size: 14px;
@@ -48,81 +111,61 @@
       color: #0056b3;
       font-weight: bold;
     }
-    /* 右上角语言切换按钮区域 */
-    .language-switch {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-      background-color: #f0f0f0;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    }
-    .language-switch button {
-      margin: 0 5px;
-      padding: 8px 16px;
-      font-size: 14px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    /* 中英文公共按钮样式 */
-    .common-button {
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .common-button:hover {
-      background-color: #0056b3;
-    }
-    /* 对“报价与沟通方式”这段新加说明文字做一定美化 */
+
+    /* 7. quote-info：用于新增的那段提示 */
     .quote-info {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: #f9f9f9;
-      border-left: 4px solid #007BFF;
+      background: #f7fbff;
+      border-left: 5px solid #007BFF;
+      padding: 15px 20px;
+      margin: 20px 0;
       border-radius: 3px;
       line-height: 1.6;
-      font-size: 15px;
-      color: #333;
     }
+
+    /* 8. 隐藏通用类 */
+    .hidden {
+      display: none;
+    }
+
+    /* ===== 如果需要更详细的设计，可继续补充 ===== */
   </style>
 </head>
 <body>
 
-<!-- 语言切换：固定在右上角 -->
+<!-- 固定右上角的语言切换按钮 -->
 <div class="language-switch">
   <button onclick="switchLanguage('zh')" id="lang-zh" style="background-color: #ddd; color: black;">中文</button>
-  <button onclick="switchLanguage('en')" id="lang-en" style="background-color: #0056b3; color: white;">English</button>
+  <button onclick="switchLanguage('en')" id="lang-en" style="background-color: #007BFF; color: white;">English</button>
 </div>
 
-<!-- 中文内容 -->
+<!-- ========================== 中文内容 ========================== -->
 <div id="content-zh" class="content hidden">
   <h1>✨ ApexFix | 阿德莱德家庭维修与翻新服务 ✨</h1>
+  
+  <!-- 二维码 -->
   <div style="text-align: center; margin: 20px 0;">
     <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
   </div>
-  <p style="text-align: center;">我们专注于家庭维修和翻新，价格透明，服务周到，为您打造更舒适的家居环境！</p>
 
-  <!-- “营业时间”按钮与“工作历史”按钮区域 -->
+  <!-- 简介 -->
+  <p style="text-align: center;">
+    我们专注于家庭维修和翻新，价格透明，服务周到，为您打造更舒适的家居环境！
+  </p>
+
+  <!-- 按钮：营业时间 + 工作历史 -->
   <div style="text-align: center; margin-bottom: 20px;">
     <button class="common-button" onclick="toggleBusinessHours('zh')">营业时间</button>
     <button class="common-button" onclick="navigateToWorkHistory()">工作历史</button>
-    
-    <!-- 营业时间提示文本，就在按钮正下方 -->
-    <div id="business-hours-zh" style="display: none; margin-top: 10px;">
+
+    <!-- 点击展开的营业时间内容 -->
+    <div id="business-hours-zh" style="display: none;">
       <p>全天营业，节假日无附加费。</p>
     </div>
   </div>
 
   <!-- 联系方式 -->
-  <div style="text-align: center; margin-top: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">
-    <h3 style="font-size: 18px; color: #007BFF;">联系我们</h3>
+  <div style="text-align: center; margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">
+    <h3 style="font-size: 18px; color: #007BFF; margin: 0 0 10px;">联系我们</h3>
     <p style="margin: 5px 0; font-size: 16px;">
       📞 联系电话: 
       <a href="tel:+0492950816" style="color: #0056b3; text-decoration: none;">0492 950 816</a>
@@ -137,15 +180,21 @@
     </p>
   </div>
 
-  <!-- 新增：报价与沟通方式提示文字（中文） -->
+  <!-- 新增：提示文本（中文版） -->
   <div class="quote-info">
-    我们通常情况下需要全方位的照片和情况说明，这样我们可以给出准确的报价，并不会因为判断失误而到现场增加价格。
-    <br>这适用于小型项目，大型项目我们提供免费上门报价。
-    <br>如果您是紧急情况请发送短信，我们会很快回复；如果不紧急，请发送邮件，我们会在每天晚上之前处理完所有的邮件。
+    如果您需要我们，请发送短信或者邮件，我们会在当天回复所有信息。
   </div>
 
-  <!-- 服务范围与价格 -->
-  <h2>📋 服务范围与价格详情</h2>
+  <!-- 服务范围与价格标题 -->
+  <h2>📋 服务范围与价格</h2>
+  
+  <!-- 声明：价格表仅供参考 -->
+  <p class="note" style="font-size: 15px; margin-bottom: 10px; color: #555;">
+    价格表仅为部分项目参考价格，并非全部经营项目。<br>
+    如果您家里遇到任何问题，或需要装修、粉刷墙壁、搭建凉棚等其他服务，均可随时联系我们。
+  </p>
+
+  <!-- 修补类 -->
   <h3>🛠️ 修补类</h3>
   <table>
     <tr>
@@ -176,6 +225,7 @@
   </table>
   <p class="note">💡 价格仅供参考，实际费用可能根据情况调整。如有其他修补需求，欢迎随时咨询。</p>
 
+  <!-- 疏通类 -->
   <h3>🚰 疏通类</h3>
   <table>
     <tr>
@@ -205,7 +255,8 @@
     </tr>
   </table>
   <p class="note">💡 无论是普通堵塞还是复杂管道问题，我们都有专业的解决方案！</p>
-  
+
+  <!-- 安装类 -->
   <h3>🔧 安装类</h3>
   <table>
     <tr>
@@ -255,7 +306,8 @@
     </tr>
   </table>
   <p class="note">💡 如果有其他安装需求，欢迎咨询，我们会为您提供专业建议和服务！</p>
-  
+
+  <!-- 打磨翻新类 -->
   <h3>🪚 打磨翻新类</h3>
   <table>
     <tr>
@@ -287,28 +339,34 @@
   <p class="note">💡 无论是局部翻新还是整体打磨，我们都能提供满意的解决方案！</p>
 </div>
 
-<!-- 英文内容 -->
+<!-- ========================== 英文内容 ========================== -->
 <div id="content-en" class="content">
   <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
+  
+  <!-- 二维码 -->
   <div style="text-align: center; margin: 20px 0;">
     <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
   </div>
-  <p style="text-align: center;">We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!</p>
 
-  <!-- “Business Hours”按钮与“Work History”按钮区域 -->
+  <!-- 简介 -->
+  <p style="text-align: center;">
+    We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!
+  </p>
+
+  <!-- 按钮：Business Hours + Work History -->
   <div style="text-align: center; margin-bottom: 20px;">
     <button class="common-button" onclick="toggleBusinessHours('en')">Business Hours</button>
     <button class="common-button" onclick="navigateToWorkHistory()">Work History</button>
-    
-    <!-- Business Hours 提示文本，就在按钮正下方 -->
-    <div id="business-hours-en" style="display: none; margin-top: 10px;">
+
+    <!-- 点击展开的Business Hours内容 -->
+    <div id="business-hours-en" style="display: none;">
       <p>Open 24/7. No additional fees on public holidays.</p>
     </div>
   </div>
 
   <!-- 联系方式 -->
-  <div style="text-align: center; margin-top: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">
-    <h3 style="font-size: 18px; color: #007BFF;">Contact Us</h3>
+  <div style="text-align: center; margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">
+    <h3 style="font-size: 18px; color: #007BFF; margin: 0 0 10px;">Contact Us</h3>
     <p style="margin: 5px 0; font-size: 16px;">
       📞 Phone: 
       <a href="tel:+0492950816" style="color: #0056b3; text-decoration: none;">0492 950 816</a>
@@ -323,16 +381,21 @@
     </p>
   </div>
 
-  <!-- 新增：报价与沟通方式提示文字（英文） -->
+  <!-- 新增：提示文本（英文版） -->
   <div class="quote-info">
-    Usually, we require comprehensive photos and a detailed description of the issue to provide an accurate quote. This prevents any unexpected price increases due to misjudgments upon arrival.
-    <br>This approach applies to smaller projects. For larger projects, we offer free on-site quotes.
-    <br>If you have an emergency, please send us a text message for a quick response. If it’s not urgent, please email us, and we’ll get back to you by the end of the day.
+    If you need our services, please send us a text message or email, and we will respond within the same day.
   </div>
 
-  <!-- 服务范围与价格 -->
+  <!-- 服务范围与价格标题 -->
   <h2>📋 Scope of Services & Pricing</h2>
+  
+  <!-- 声明：价格表仅供参考 -->
+  <p class="note" style="font-size: 15px; margin-bottom: 10px; color: #555;">
+    The price list is just a reference for some of our services, not a comprehensive list.<br>
+    If you have any other needs—such as renovations, wall painting, or gazebo construction—feel free to contact us.
+  </p>
 
+  <!-- Repair Services -->
   <h3>🛠️ Repair Services</h3>
   <table>
     <tr>
@@ -363,6 +426,7 @@
   </table>
   <p class="note">💡 Prices are for reference only and may vary based on the situation. Contact us for other repair needs!</p>
 
+  <!-- Drainage Services -->
   <h3>🚰 Drainage Services</h3>
   <table>
     <tr>
@@ -393,6 +457,7 @@
   </table>
   <p class="note">💡 We offer professional solutions for all types of blockages, from simple to complex issues!</p>
 
+  <!-- Installation Services -->
   <h3>🔧 Installation Services</h3>
   <table>
     <tr>
@@ -433,6 +498,7 @@
   </table>
   <p class="note">💡 Contact us for any installation needs, even if not listed above!</p>
 
+  <!-- Polishing & Renovation Services -->
   <h3>🪚 Polishing & Renovation Services</h3>
   <table>
     <tr>
@@ -464,10 +530,10 @@
   <p class="note">💡 We provide tailored solutions for both partial and full renovations!</p>
 </div>
 
+<!-- ========================== 脚本 ========================== -->
 <script>
 /**
  * 展开/收起“营业时间”或“Business Hours”功能
- * lang 参数可为 'zh' 或 'en'
  */
 function toggleBusinessHours(lang) {
   const button = document.querySelector(`button[onclick="toggleBusinessHours('${lang}')"]`);
@@ -493,7 +559,6 @@ function toggleBusinessHours(lang) {
 
 /**
  * 切换语言显示
- * lang 参数可为 'zh' 或 'en'
  */
 function switchLanguage(lang) {
   // 先将所有 content 隐藏
@@ -504,9 +569,9 @@ function switchLanguage(lang) {
   document.querySelector(`#content-${lang}`).classList.remove('hidden');
 
   // 更新按钮样式
-  document.getElementById('lang-zh').style.backgroundColor = (lang === 'zh') ? '#0056b3' : '#ddd';
+  document.getElementById('lang-zh').style.backgroundColor = (lang === 'zh') ? '#007BFF' : '#ddd';
   document.getElementById('lang-zh').style.color = (lang === 'zh') ? 'white' : 'black';
-  document.getElementById('lang-en').style.backgroundColor = (lang === 'en') ? '#0056b3' : '#ddd';
+  document.getElementById('lang-en').style.backgroundColor = (lang === 'en') ? '#007BFF' : '#ddd';
   document.getElementById('lang-en').style.color = (lang === 'en') ? 'white' : 'black';
 }
 
