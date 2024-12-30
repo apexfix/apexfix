@@ -6,6 +6,35 @@
     <title>ApexFix | Adelaide Home Repair & Renovation Services</title>
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="js/scripts.js"></script>
+    <style>
+        /* 仅供演示，建议移动到独立的 CSS 文件 */
+        .hidden {
+            display: none;
+        }
+        .content {
+            padding: 0 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .highlight {
+            color: #0056b3;
+            font-weight: bold;
+        }
+        .note {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,11 +43,11 @@
     <button onclick="switchLanguage('en')" id="lang-en" style="margin: 0 10px; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; background-color: #0056b3; color: white;">English</button>
 </div>
 
+<!-- 中文内容 -->
 <div id="content-zh" class="content hidden">
     <h1>✨ ApexFix | 阿德莱德家庭维修与翻新服务 ✨</h1>
     <div style="text-align: center; margin: 20px 0;">
-            <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
-        </a>
+        <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
     </div>
     <p style="text-align: center;">我们专注于家庭维修和翻新，价格透明，服务周到，为您打造更舒适的家居环境！</p>
     <div style="text-align: center; margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">
@@ -27,15 +56,23 @@
     </div>
     <div style="text-align: center; margin-top: 20px;">
         <h3 style="font-size: 18px; color: #007BFF;">联系我们</h3>
-        <p style="margin: 5px 0; font-size: 16px;">📞 联系电话: <a href="tel:+0492950816" style="color: #0056b3; text-decoration: none;">0492 950 816</a></p>
-        <p style="margin: 5px 0; font-size: 16px;">✉️ 邮箱: <a href="mailto:apexfixau@gmail.com" style="color: #0056b3; text-decoration: none;">apexfixau@gmail.com</a></p>
-        <p style="margin: 5px 0; font-size: 16px;">🌐 官方网站: <a href="http://apexfix.com.au" target="_blank" style="color: #0056b3; text-decoration: none;">http://apexfix.com.au</a></p>
+        <p style="margin: 5px 0; font-size: 16px;">📞 联系电话: 
+            <a href="tel:+0492950816" style="color: #0056b3; text-decoration: none;">0492 950 816</a>
+        </p>
+        <p style="margin: 5px 0; font-size: 16px;">✉️ 邮箱: 
+            <a href="mailto:apexfixau@gmail.com" style="color: #0056b3; text-decoration: none;">apexfixau@gmail.com</a>
+        </p>
+        <p style="margin: 5px 0; font-size: 16px;">🌐 官方网站: 
+            <a href="http://apexfix.com.au" target="_blank" style="color: #0056b3; text-decoration: none;">http://apexfix.com.au</a>
+        </p>
     </div>
     <div id="business-hours-zh" style="display: none; text-align: center; margin-top: 10px;">
         <p>全天营业，节假日无附加费。</p>
     </div>
+
     <h2>📋 服务范围与价格详情</h2>
-    
+
+    <!-- 修补类 -->
     <h3>🛠️ 修补类</h3>
     <table>
         <tr>
@@ -66,6 +103,7 @@
     </table>
     <p class="note">💡 价格仅供参考，实际费用可能根据情况调整。如有其他修补需求，欢迎随时咨询。</p>
     
+    <!-- 疏通类 -->
     <h3>🚰 疏通类</h3>
     <table>
         <tr>
@@ -96,6 +134,7 @@
     </table>
     <p class="note">💡 无论是普通堵塞还是复杂管道问题，我们都有专业的解决方案！</p>
     
+    <!-- 安装类 -->
     <h3>🔧 安装类</h3>
     <table>
         <tr>
@@ -146,6 +185,7 @@
     </table>
     <p class="note">💡 如果有其他安装需求，欢迎咨询，我们会为您提供专业建议和服务！</p>
     
+    <!-- 打磨翻新类 -->
     <h3>🪚 打磨翻新类</h3>
     <table>
         <tr>
@@ -179,33 +219,40 @@
     <h2>📞 联系我们</h2>
     <p>📞 <strong>联系电话：</strong><span class="highlight">0492 950 816</span></p>
     <p>✉️ <strong>邮箱：</strong><span class="highlight">apexfixau@gmail.com</span></p>
-    <p>🌐 <strong>官方网站：</strong><a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a></p>
-    
-        </tr>
-    </table>
+    <p>🌐 <strong>官方网站：</strong>
+        <a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a>
+    </p>
 </div>
 
+<!-- 英文内容 -->
 <div id="content-en" class="content">
     <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
     <div style="text-align: center; margin: 20px 0;">
-            <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
-        </a>
+        <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
     </div>
-    <p style="text-align: center;">We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!</p>
+    <p style="text-align: center;">
+        We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!
+    </p>
     <div style="text-align: center; margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">
         <button style="margin: 10px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px;" onclick="toggleBusinessHours('en')">Business Hours</button>
         <button style="margin: 10px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px;" onclick="navigateToWorkHistory()">Work History</button>
     </div>
     <div style="text-align: center; margin-top: 20px;">
         <h3 style="font-size: 18px; color: #007BFF;">Contact Us</h3>
-        <p style="margin: 5px 0; font-size: 16px;">📞 Phone: <a href="tel:+0492950816" style="color: #0056b3; text-decoration: none;">0492 950 816</a></p>
-        <p style="margin: 5px 0; font-size: 16px;">✉️ Email: <a href="mailto:apexfixau@gmail.com" style="color: #0056b3; text-decoration: none;">apexfixau@gmail.com</a></p>
-        <p style="margin: 5px 0; font-size: 16px;">🌐 Website: <a href="http://apexfix.com.au" target="_blank" style="color: #0056b3; text-decoration: none;">http://apexfix.com.au</a></p>
-    </div>
+        <p style="margin: 5px 0; font-size: 16px;">📞 Phone: 
+            <a href="tel:+0492950816" style="color: #0056b3; text-decoration: none;">0492 950 816</a>
+        </p>
+        <p style="margin: 5px 0; font-size: 16px;">✉️ <strong>Email:</strong> 
+            <a href="mailto:apexfixau@gmail.com" style="color: #0056b3; text-decoration: none;">apexfixau@gmail.com</a>
+        </p>
+        <p style="margin: 5px 0; font-size: 16px;">🌐 Website: 
+            <a href="http://apexfix.com.au" target="_blank" style="color: #0056b3; text-decoration: none;">http://apexfix.com.au</a>
+        </p>
     </div>
     <div id="business-hours-en" style="display: none; text-align: center; margin-top: 10px;">
         <p>Open 24/7. No additional fees on public holidays.</p>
     </div>
+    
     <h2>📋 Scope of Services & Pricing</h2>
     <h3>🛠️ Repair Services</h3>
     <table>
@@ -339,22 +386,35 @@
     
     <h2>📞 Contact Us</h2>
     <p>📞 <strong>Phone:</strong> <span class="highlight">0492 950 816</span></p>
-    <p>✉️ W rong>Email:</strong> <span class="highlight">apexfixau@gmail.com</span></p>
-    <p>🌐 <strong>Website:</strong> <a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a></p>
-        </tr>
-    </table>
+    <p>✉️ <strong>Email:</strong> <span class="highlight">apexfixau@gmail.com</span></p>
+    <p>🌐 <strong>Website:</strong>
+        <a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a>
+    </p>
 </div>
 
 <script>
+/**
+ * 展开/收起“营业时间”或“Business Hours”功能
+ * lang 参数可为 'zh' 或 'en'
+ */
 function toggleBusinessHours(lang) {
-    const button = document.querySelector('button[onclick="toggleBusinessHours(\'' + lang + '\')"]');
+    const button = document.querySelector(`button[onclick="toggleBusinessHours('${lang}')"]`);
     const section = document.getElementById(`business-hours-${lang}`);
+
+    // 简单的“加载中”动画模拟
     button.innerText = "Loading...";
     button.style.backgroundColor = "#0056b3";
+
     setTimeout(() => {
         if (section) {
-            section.style.display = section.style.display === 'none' ? 'block' : 'none';
-            button.innerText = "营业时间";
+            section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
+
+            // 恢复按钮文字和颜色
+            if (lang === 'zh') {
+                button.innerText = "营业时间";
+            } else {
+                button.innerText = "Business Hours";
+            }
             button.style.backgroundColor = "#007BFF";
         } else {
             console.error(`Section for business hours (${lang}) not found.`);
@@ -362,21 +422,28 @@ function toggleBusinessHours(lang) {
     }, 100);
 }
 
+/**
+ * 切换语言显示
+ * lang 参数可为 'zh' 或 'en'
+ */
 function switchLanguage(lang) {
+    // 先将所有 content 隐藏
     document.querySelectorAll('.content').forEach(content => {
         content.classList.add('hidden');
     });
+    // 显示对应语言的 content
     document.querySelector(`#content-${lang}`).classList.remove('hidden');
 
-    // Update button styles
-    document.getElementById('lang-zh').style.backgroundColor = lang === 'zh' ? '#0056b3' : '#ddd';
-    document.getElementById('lang-zh').style.color = lang === 'zh' ? 'white' : 'black';
-    document.getElementById('lang-en').style.backgroundColor = lang === 'en' ? '#0056b3' : '#ddd';
-    document.getElementById('lang-en').style.color = lang === 'en' ? 'white' : 'black';
-});
-    document.querySelector(`#content-${lang}`).classList.remove('hidden');
+    // 更新按钮样式
+    document.getElementById('lang-zh').style.backgroundColor = (lang === 'zh') ? '#0056b3' : '#ddd';
+    document.getElementById('lang-zh').style.color = (lang === 'zh') ? 'white' : 'black';
+    document.getElementById('lang-en').style.backgroundColor = (lang === 'en') ? '#0056b3' : '#ddd';
+    document.getElementById('lang-en').style.color = (lang === 'en') ? 'white' : 'black';
 }
 
+/**
+ * 跳转到工作历史
+ */
 function navigateToWorkHistory() {
     const button = document.querySelector('button[onclick="navigateToWorkHistory()"]');
     button.innerText = "Loading...";
