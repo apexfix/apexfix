@@ -1,395 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ApexFix | Adelaide Home Repair & Renovation Services</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script defer src="js/scripts.js"></script>
-    <style>
-        /* 仅供演示，建议移动到独立的 CSS 文件 */
-        .hidden {
-            display: none;
-        }
-        .content {
-            padding: 0 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        .highlight {
-            color: #0056b3;
-            font-weight: bold;
-        }
-        .note {
-            font-size: 14px;
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ApexFix | Adelaide Home Repair & Renovation Services</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/scripts.js"></script>
+  <style>
+    /* 通用样式示例，建议放入 styles.css */
+    
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fafafa;
+    }
+    .hidden {
+      display: none;
+    }
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      margin-bottom: 40px; /* 预留底部空间 */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+    h1, h2, h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    .note {
+      font-size: 14px;
+      color: #666;
+    }
+    .highlight {
+      color: #0056b3;
+      font-weight: bold;
+    }
+    /* 右上角语言切换按钮区域 */
+    .language-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .language-switch button {
+      margin: 0 5px;
+      padding: 8px 16px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    /* 中英文公共按钮样式 */
+    .common-button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .common-button:hover {
+      background-color: #0056b3;
+    }
+    /* 对“报价与沟通方式”这段新加说明文字做一定美化 */
+    .quote-info {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-left: 4px solid #007BFF;
+      border-radius: 3px;
+      line-height: 1.6;
+      font-size: 15px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
 
-<div class="language-switch" style="text-align: center; margin-bottom: 20px;">
-    <button onclick="switchLanguage('zh')" id="lang-zh" style="margin: 0 10px; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; background-color: #ddd; color: black;">中文</button>
-    <button onclick="switchLanguage('en')" id="lang-en" style="margin: 0 10px; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; background-color: #0056b3; color: white;">English</button>
+<!-- 语言切换：固定在右上角 -->
+<div class="language-switch">
+  <button onclick="switchLanguage('zh')" id="lang-zh" style="background-color: #ddd; color: black;">中文</button>
+  <button onclick="switchLanguage('en')" id="lang-en" style="background-color: #0056b3; color: white;">English</button>
 </div>
 
 <!-- 中文内容 -->
 <div id="content-zh" class="content hidden">
-    <h1>✨ ApexFix | 阿德莱德家庭维修与翻新服务 ✨</h1>
-    <div style="text-align: center; margin: 20px 0;">
-        <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
-    </div>
-    <p style="text-align: center;">我们专注于家庭维修和翻新，价格透明，服务周到，为您打造更舒适的家居环境！</p>
-    <div style="text-align: center; margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">
-        <button style="margin: 10px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px;" onclick="toggleBusinessHours('zh')">营业时间</button>
-        <button style="margin: 10px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px;" onclick="navigateToWorkHistory()">工作历史</button>
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <h3 style="font-size: 18px; color: #007BFF;">联系我们</h3>
-        <p style="margin: 5px 0; font-size: 16px;">📞 联系电话: 
-            <a href="tel:+0492950816" style="color: #0056b3; text-decoration: none;">0492 950 816</a>
-        </p>
-        <p style="margin: 5px 0; font-size: 16px;">✉️ 邮箱: 
-            <a href="mailto:apexfixau@gmail.com" style="color: #0056b3; text-decoration: none;">apexfixau@gmail.com</a>
-        </p>
-        <p style="margin: 5px 0; font-size: 16px;">🌐 官方网站: 
-            <a href="http://apexfix.com.au" target="_blank" style="color: #0056b3; text-decoration: none;">http://apexfix.com.au</a>
-        </p>
-    </div>
-    <div id="business-hours-zh" style="display: none; text-align: center; margin-top: 10px;">
-        <p>全天营业，节假日无附加费。</p>
-    </div>
+  <h1>✨ ApexFix | 阿德莱德家庭维修与翻新服务 ✨</h1>
+  <div style="text-align: center; margin: 20px 0;">
+    <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
+  </div>
+  <p style="text-align: center;">我们专注于家庭维修和翻新，价格透明，服务周到，为您打造更舒适的家居环境！</p>
 
-    <h2>📋 服务范围与价格详情</h2>
+  <!-- “营业时间”按钮与“工作历史”按钮区域 -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <button class="common-button" onclick="toggleBusinessHours('zh')">营业时间</button>
+    <button class="common-button" onclick="navigateToWorkHistory()">工作历史</button>
+    
+    <!-- 营业时间提示文本，就在按钮正下方 -->
+    <div id="business-hours-zh" style="display: none; margin-top: 10px;">
+      <p>全天营业，节假日无附加费。</p>
+    </div>
+  </div>
 
-    <!-- 修补类 -->
-    <h3>🛠️ 修补类</h3>
-    <table>
-        <tr>
-            <th>服务项目</th>
-            <th>价格</th>
-            <th>备注</th>
-        </tr>
-        <tr>
-            <td>墙面修复</td>
-            <td>$200 起</td>
-            <td>含油漆</td>
-        </tr>
-        <tr>
-            <td>地板划痕修复</td>
-            <td>$80/块</td>
-            <td>现场调色，最低2块起步</td>
-        </tr>
-        <tr>
-            <td>木门补洞划痕修复</td>
-            <td>$200 起</td>
-            <td>填洞加油漆</td>
-        </tr>
-        <tr>
-            <td>瓷砖渗脏腐蚀修复</td>
-            <td>$240/平米</td>
-            <td>起步2平米</td>
-        </tr>
-    </table>
-    <p class="note">💡 价格仅供参考，实际费用可能根据情况调整。如有其他修补需求，欢迎随时咨询。</p>
-    
-    <!-- 疏通类 -->
-    <h3>🚰 疏通类</h3>
-    <table>
-        <tr>
-            <th>服务项目</th>
-            <th>价格</th>
-            <th>备注</th>
-        </tr>
-        <tr>
-            <td>厨房洗菜池疏通</td>
-            <td>$180 起</td>
-            <td>单一位置堵塞，浮动范围不超过 $60</td>
-        </tr>
-        <tr>
-            <td>马桶疏通</td>
-            <td>$180 起</td>
-            <td>单一位置堵塞，浮动范围不超过 $60</td>
-        </tr>
-        <tr>
-            <td>浴室洗漱盆疏通</td>
-            <td>$150 起</td>
-            <td>单一位置堵塞，浮动范围不超过 $60</td>
-        </tr>
-        <tr>
-            <td>全屋下水道堵塞疏通</td>
-            <td>$300 起</td>
-            <td>包含内窥摄像机检查及高压清洗机清洗</td>
-        </tr>
-    </table>
-    <p class="note">💡 无论是普通堵塞还是复杂管道问题，我们都有专业的解决方案！</p>
-    
-    <!-- 安装类 -->
-    <h3>🔧 安装类</h3>
-    <table>
-        <tr>
-            <th>服务项目</th>
-            <th>价格</th>
-            <th>备注</th>
-        </tr>
-        <tr>
-            <td>室内门安装</td>
-            <td>$150/扇</td>
-            <td>两扇 $230；三扇及以上 $100/扇</td>
-        </tr>
-        <tr>
-            <td>室内门门锁安装</td>
-            <td>$150 起</td>
-            <td>价格包含门锁</td>
-        </tr>
-        <tr>
-            <td>大门电子锁安装</td>
-            <td>$200 起</td>
-            <td>仅人工费用</td>
-        </tr>
-        <tr>
-            <td>宜家家具安装</td>
-            <td>$60/小时</td>
-            <td>最低3小时起</td>
-        </tr>
-        <tr>
-            <td>中国或其他家具安装</td>
-            <td>需看图报价</td>
-            <td>根据复杂程度调整报价</td>
-        </tr>
-        <tr>
-            <td>澳洲本地橱柜安装</td>
-            <td>需现场报价</td>
-            <td>根据实际情况评估</td>
-        </tr>
-        <tr>
-            <td>中国橱柜安装</td>
-            <td>$130/小时起</td>
-            <td>视复杂程度调整</td>
-        </tr>
-        <tr>
-            <td>电动/手动凉亭安装</td>
-            <td>$400 起</td>
-            <td>需看图报价</td>
-        </tr>
-    </table>
-    <p class="note">💡 如果有其他安装需求，欢迎咨询，我们会为您提供专业建议和服务！</p>
-    
-    <!-- 打磨翻新类 -->
-    <h3>🪚 打磨翻新类</h3>
-    <table>
-        <tr>
-            <th>服务项目</th>
-            <th>价格</th>
-            <th>备注</th>
-        </tr>
-        <tr>
-            <td>厨房台面打磨翻新抛光</td>
-            <td>$200 起</td>
-            <td>根据台面材质和面积调整价格</td>
-        </tr>
-        <tr>
-            <td>瓷砖渗脏腐蚀修复</td>
-            <td>$240/平米</td>
-            <td>起步2平米</td>
-        </tr>
-        <tr>
-            <td>全屋瓷砖打磨抛光翻新</td>
-            <td>需上门报价</td>
-            <td>根据面积与施工复杂度评估</td>
-        </tr>
-        <tr>
-            <td>木地板打磨翻新</td>
-            <td>需上门报价</td>
-            <td>根据面积与损坏程度提供具体报价</td>
-        </tr>
-    </table>
-    <p class="note">💡 无论是局部翻新还是整体打磨，我们都能提供满意的解决方案！</p>
-    
-    <h2>📞 联系我们</h2>
-    <p>📞 <strong>联系电话：</strong><span class="highlight">0492 950 816</span></p>
-    <p>✉️ <strong>邮箱：</strong><span class="highlight">apexfixau@gmail.com</span></p>
-    <p>🌐 <strong>官方网站：</strong>
-        <a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a>
+  <!-- 联系方式 -->
+  <div style="text-align: center; margin-top: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">
+    <h3 style="font-size: 18px; color: #007BFF;">联系我们</h3>
+    <p style="margin: 5px 0; font-size: 16px;">
+      📞 联系电话: 
+      <a href="tel:+0492950816" style="color: #0056b3; text-decoration: none;">0492 950 816</a>
     </p>
+    <p style="margin: 5px 0; font-size: 16px;">
+      ✉️ 邮箱: 
+      <a href="mailto:apexfixau@gmail.com" style="color: #0056b3; text-decoration: none;">apexfixau@gmail.com</a>
+    </p>
+    <p style="margin: 5px 0; font-size: 16px;">
+      🌐 官方网站: 
+      <a href="http://apexfix.com.au" target="_blank" style="color: #0056b3; text-decoration: none;">http://apexfix.com.au</a>
+    </p>
+  </div>
+
+  <!-- 新增：报价与沟通方式提示文字（中文） -->
+  <div class="quote-info">
+    我们通常情况下需要全方位的照片和情况说明，这样我们可以给出准确的报价，并不会因为判断失误而到现场增加价格。
+    <br>这适用于小型项目，大型项目我们提供免费上门报价。
+    <br>如果您是紧急情况请发送短信，我们会很快回复；如果不紧急，请发送邮件，我们会在每天晚上之前处理完所有的邮件。
+  </div>
+
+  <!-- 服务范围与价格 -->
+  <h2>📋 服务范围与价格详情</h2>
+  <h3>🛠️ 修补类</h3>
+  <table>
+    <tr>
+      <th>服务项目</th>
+      <th>价格</th>
+      <th>备注</th>
+    </tr>
+    <tr>
+      <td>墙面修复</td>
+      <td>$200 起</td>
+      <td>含油漆</td>
+    </tr>
+    <tr>
+      <td>地板划痕修复</td>
+      <td>$80/块</td>
+      <td>现场调色，最低2块起步</td>
+    </tr>
+    <tr>
+      <td>木门补洞划痕修复</td>
+      <td>$200 起</td>
+      <td>填洞加油漆</td>
+    </tr>
+    <tr>
+      <td>瓷砖渗脏腐蚀修复</td>
+      <td>$240/平米</td>
+      <td>起步2平米</td>
+    </tr>
+  </table>
+  <p class="note">💡 价格仅供参考，实际费用可能根据情况调整。如有其他修补需求，欢迎随时咨询。</p>
+
+  <h3>🚰 疏通类</h3>
+  <table>
+    <tr>
+      <th>服务项目</th>
+      <th>价格</th>
+      <th>备注</th>
+    </tr>
+    <tr>
+      <td>厨房洗菜池疏通</td>
+      <td>$180 起</td>
+      <td>单一位置堵塞，浮动范围不超过 $60</td>
+    </tr>
+    <tr>
+      <td>马桶疏通</td>
+      <td>$180 起</td>
+      <td>单一位置堵塞，浮动范围不超过 $60</td>
+    </tr>
+    <tr>
+      <td>浴室洗漱盆疏通</td>
+      <td>$150 起</td>
+      <td>单一位置堵塞，浮动范围不超过 $60</td>
+    </tr>
+    <tr>
+      <td>全屋下水道堵塞疏通</td>
+      <td>$300 起</td>
+      <td>包含内窥摄像机检查及高压清洗机清洗</td>
+    </tr>
+  </table>
+  <p class="note">💡 无论是普通堵塞还是复杂管道问题，我们都有专业的解决方案！</p>
+  
+  <h3>🔧 安装类</h3>
+  <table>
+    <tr>
+      <th>服务项目</th>
+      <th>价格</th>
+      <th>备注</th>
+    </tr>
+    <tr>
+      <td>室内门安装</td>
+      <td>$150/扇</td>
+      <td>两扇 $230；三扇及以上 $100/扇</td>
+    </tr>
+    <tr>
+      <td>室内门门锁安装</td>
+      <td>$150 起</td>
+      <td>价格包含门锁</td>
+    </tr>
+    <tr>
+      <td>大门电子锁安装</td>
+      <td>$200 起</td>
+      <td>仅人工费用</td>
+    </tr>
+    <tr>
+      <td>宜家家具安装</td>
+      <td>$60/小时</td>
+      <td>最低3小时起</td>
+    </tr>
+    <tr>
+      <td>中国或其他家具安装</td>
+      <td>需看图报价</td>
+      <td>根据复杂程度调整报价</td>
+    </tr>
+    <tr>
+      <td>澳洲本地橱柜安装</td>
+      <td>需现场报价</td>
+      <td>根据实际情况评估</td>
+    </tr>
+    <tr>
+      <td>中国橱柜安装</td>
+      <td>$130/小时起</td>
+      <td>视复杂程度调整</td>
+    </tr>
+    <tr>
+      <td>电动/手动凉亭安装</td>
+      <td>$400 起</td>
+      <td>需看图报价</td>
+    </tr>
+  </table>
+  <p class="note">💡 如果有其他安装需求，欢迎咨询，我们会为您提供专业建议和服务！</p>
+  
+  <h3>🪚 打磨翻新类</h3>
+  <table>
+    <tr>
+      <th>服务项目</th>
+      <th>价格</th>
+      <th>备注</th>
+    </tr>
+    <tr>
+      <td>厨房台面打磨翻新抛光</td>
+      <td>$200 起</td>
+      <td>根据台面材质和面积调整价格</td>
+    </tr>
+    <tr>
+      <td>瓷砖渗脏腐蚀修复</td>
+      <td>$240/平米</td>
+      <td>起步2平米</td>
+    </tr>
+    <tr>
+      <td>全屋瓷砖打磨抛光翻新</td>
+      <td>需上门报价</td>
+      <td>根据面积与施工复杂度评估</td>
+    </tr>
+    <tr>
+      <td>木地板打磨翻新</td>
+      <td>需上门报价</td>
+      <td>根据面积与损坏程度提供具体报价</td>
+    </tr>
+  </table>
+  <p class="note">💡 无论是局部翻新还是整体打磨，我们都能提供满意的解决方案！</p>
 </div>
 
 <!-- 英文内容 -->
 <div id="content-en" class="content">
-    <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
-    <div style="text-align: center; margin: 20px 0;">
-        <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
+  <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
+  <div style="text-align: center; margin: 20px 0;">
+    <img src="images/wechat-qrcode.png" alt="WeChat QR Code" style="width: 150px; height: 150px;">
+  </div>
+  <p style="text-align: center;">We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!</p>
+
+  <!-- “Business Hours”按钮与“Work History”按钮区域 -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <button class="common-button" onclick="toggleBusinessHours('en')">Business Hours</button>
+    <button class="common-button" onclick="navigateToWorkHistory()">Work History</button>
+    
+    <!-- Business Hours 提示文本，就在按钮正下方 -->
+    <div id="business-hours-en" style="display: none; margin-top: 10px;">
+      <p>Open 24/7. No additional fees on public holidays.</p>
     </div>
-    <p style="text-align: center;">
-        We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!
+  </div>
+
+  <!-- 联系方式 -->
+  <div style="text-align: center; margin-top: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">
+    <h3 style="font-size: 18px; color: #007BFF;">Contact Us</h3>
+    <p style="margin: 5px 0; font-size: 16px;">
+      📞 Phone: 
+      <a href="tel:+0492950816" style="color: #0056b3; text-decoration: none;">0492 950 816</a>
     </p>
-    <div style="text-align: center; margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">
-        <button style="margin: 10px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px;" onclick="toggleBusinessHours('en')">Business Hours</button>
-        <button style="margin: 10px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px;" onclick="navigateToWorkHistory()">Work History</button>
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <h3 style="font-size: 18px; color: #007BFF;">Contact Us</h3>
-        <p style="margin: 5px 0; font-size: 16px;">📞 Phone: 
-            <a href="tel:+0492950816" style="color: #0056b3; text-decoration: none;">0492 950 816</a>
-        </p>
-        <p style="margin: 5px 0; font-size: 16px;">✉️ <strong>Email:</strong> 
-            <a href="mailto:apexfixau@gmail.com" style="color: #0056b3; text-decoration: none;">apexfixau@gmail.com</a>
-        </p>
-        <p style="margin: 5px 0; font-size: 16px;">🌐 Website: 
-            <a href="http://apexfix.com.au" target="_blank" style="color: #0056b3; text-decoration: none;">http://apexfix.com.au</a>
-        </p>
-    </div>
-    <div id="business-hours-en" style="display: none; text-align: center; margin-top: 10px;">
-        <p>Open 24/7. No additional fees on public holidays.</p>
-    </div>
-    
-    <h2>📋 Scope of Services & Pricing</h2>
-    <h3>🛠️ Repair Services</h3>
-    <table>
-        <tr>
-            <th>Service</th>
-            <th>Price</th>
-            <th>Remarks</th>
-        </tr>
-        <tr>
-            <td>Wall Repairs</td>
-            <td>$200+</td>
-            <td>Includes painting</td>
-        </tr>
-        <tr>
-            <td>Floor Scratch Repairs</td>
-            <td>$80/board</td>
-            <td>On-site color matching, minimum 2 boards</td>
-        </tr>
-        <tr>
-            <td>Wooden Door Repairs</td>
-            <td>$200+</td>
-            <td>Includes filling and painting</td>
-        </tr>
-        <tr>
-            <td>Tile Corrosion Repairs</td>
-            <td>$240/sqm</td>
-            <td>Minimum 2 sqm</td>
-        </tr>
-    </table>
-    <p class="note">💡 Prices are for reference only and may vary based on the situation. Contact us for other repair needs!</p>
-    
-    <h3>🚰 Drainage Services</h3>
-    <table>
-        <tr>
-            <th>Service</th>
-            <th>Price</th>
-            <th>Remarks</th>
-        </tr>
-        <tr>
-            <td>Kitchen Sink Drainage</td>
-            <td>$180+</td>
-            <td>Single blockage, variation within $60</td>
-        </tr>
-        <tr>
-            <td>Toilet Unblocking</td>
-            <td>$180+</td>
-            <td>Single blockage, variation within $60</td>
-        </tr>
-        <tr>
-            <td>Bathroom Basin Drainage</td>
-            <td>$150+</td>
-            <td>Single blockage, variation within $60</td>
-        </tr>
-        <tr>
-            <td>Main Drainage Pipe</td>
-            <td>$300+</td>
-            <td>Includes camera inspection and high-pressure cleaning</td>
-        </tr>
-    </table>
-    <p class="note">💡 We offer professional solutions for all types of blockages, from simple to complex issues!</p>
-    
-    <h3>🔧 Installation Services</h3>
-    <table>
-        <tr>
-            <th>Service</th>
-            <th>Price</th>
-            <th>Remarks</th>
-        </tr>
-        <tr>
-            <td>Interior Door Installation</td>
-            <td>$150/door</td>
-            <td>$230 for two doors, $100/door for three or more</td>
-        </tr>
-        <tr>
-            <td>Interior Door Lock Installation</td>
-            <td>$150+</td>
-            <td>Price includes the lock</td>
-        </tr>
-        <tr>
-            <td>Main Door Electronic Lock</td>
-            <td>$200+</td>
-            <td>Labor only</td>
-        </tr>
-        <tr>
-            <td>IKEA Furniture Assembly</td>
-            <td>$60/hour</td>
-            <td>Minimum 3 hours</td>
-        </tr>
-        <tr>
-            <td>Custom Furniture Assembly</td>
-            <td>Quoted based on images</td>
-            <td>Price varies by complexity</td>
-        </tr>
-        <tr>
-            <td>Gazebo Assembly</td>
-            <td>$400+</td>
-            <td>Quoted based on images</td>
-        </tr>
-    </table>
-    <p class="note">💡 Contact us for any installation needs, even if not listed above!</p>
-    
-    <h3>🪚 Polishing & Renovation Services</h3>
-    <table>
-        <tr>
-            <th>Service</th>
-            <th>Price</th>
-            <th>Remarks</th>
-        </tr>
-        <tr>
-            <td>Kitchen Counter Polishing</td>
-            <td>$200+</td>
-            <td>Price varies by material and size</td>
-        </tr>
-        <tr>
-            <td>Tile Corrosion Repairs</td>
-            <td>$240/sqm</td>
-            <td>Minimum 2 sqm</td>
-        </tr>
-        <tr>
-            <td>Full House Tile Polishing</td>
-            <td>Quoted on-site</td>
-            <td>Based on size and complexity</td>
-        </tr>
-        <tr>
-            <td>Wooden Floor Polishing</td>
-            <td>Quoted on-site</td>
-            <td>Based on size and damage</td>
-        </tr>
-    </table>
-    <p class="note">💡 We provide tailored solutions for both partial and full renovations!</p>
-    
-    <h2>📞 Contact Us</h2>
-    <p>📞 <strong>Phone:</strong> <span class="highlight">0492 950 816</span></p>
-    <p>✉️ <strong>Email:</strong> <span class="highlight">apexfixau@gmail.com</span></p>
-    <p>🌐 <strong>Website:</strong>
-        <a href="http://apexfix.com.au" target="_blank" class="highlight">http://apexfix.com.au</a>
+    <p style="margin: 5px 0; font-size: 16px;">
+      ✉️ <strong>Email:</strong> 
+      <a href="mailto:apexfixau@gmail.com" style="color: #0056b3; text-decoration: none;">apexfixau@gmail.com</a>
     </p>
+    <p style="margin: 5px 0; font-size: 16px;">
+      🌐 Website: 
+      <a href="http://apexfix.com.au" target="_blank" style="color: #0056b3; text-decoration: none;">http://apexfix.com.au</a>
+    </p>
+  </div>
+
+  <!-- 新增：报价与沟通方式提示文字（英文） -->
+  <div class="quote-info">
+    Usually, we require comprehensive photos and a detailed description of the issue to provide an accurate quote. This prevents any unexpected price increases due to misjudgments upon arrival.
+    <br>This approach applies to smaller projects. For larger projects, we offer free on-site quotes.
+    <br>If you have an emergency, please send us a text message for a quick response. If it’s not urgent, please email us, and we’ll get back to you by the end of the day.
+  </div>
+
+  <!-- 服务范围与价格 -->
+  <h2>📋 Scope of Services & Pricing</h2>
+
+  <h3>🛠️ Repair Services</h3>
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>Price</th>
+      <th>Remarks</th>
+    </tr>
+    <tr>
+      <td>Wall Repairs</td>
+      <td>$200+</td>
+      <td>Includes painting</td>
+    </tr>
+    <tr>
+      <td>Floor Scratch Repairs</td>
+      <td>$80/board</td>
+      <td>On-site color matching, minimum 2 boards</td>
+    </tr>
+    <tr>
+      <td>Wooden Door Repairs</td>
+      <td>$200+</td>
+      <td>Includes filling and painting</td>
+    </tr>
+    <tr>
+      <td>Tile Corrosion Repairs</td>
+      <td>$240/sqm</td>
+      <td>Minimum 2 sqm</td>
+    </tr>
+  </table>
+  <p class="note">💡 Prices are for reference only and may vary based on the situation. Contact us for other repair needs!</p>
+
+  <h3>🚰 Drainage Services</h3>
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>Price</th>
+      <th>Remarks</th>
+    </tr>
+    <tr>
+      <td>Kitchen Sink Drainage</td>
+      <td>$180+</td>
+      <td>Single blockage, variation within $60</td>
+    </tr>
+    <tr>
+      <td>Toilet Unblocking</td>
+      <td>$180+</td>
+      <td>Single blockage, variation within $60</td>
+    </tr>
+    <tr>
+      <td>Bathroom Basin Drainage</td>
+      <td>$150+</td>
+      <td>Single blockage, variation within $60</td>
+    </tr>
+    <tr>
+      <td>Main Drainage Pipe</td>
+      <td>$300+</td>
+      <td>Includes camera inspection and high-pressure cleaning</td>
+    </tr>
+  </table>
+  <p class="note">💡 We offer professional solutions for all types of blockages, from simple to complex issues!</p>
+
+  <h3>🔧 Installation Services</h3>
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>Price</th>
+      <th>Remarks</th>
+    </tr>
+    <tr>
+      <td>Interior Door Installation</td>
+      <td>$150/door</td>
+      <td>$230 for two doors, $100/door for three or more</td>
+    </tr>
+    <tr>
+      <td>Interior Door Lock Installation</td>
+      <td>$150+</td>
+      <td>Price includes the lock</td>
+    </tr>
+    <tr>
+      <td>Main Door Electronic Lock</td>
+      <td>$200+</td>
+      <td>Labor only</td>
+    </tr>
+    <tr>
+      <td>IKEA Furniture Assembly</td>
+      <td>$60/hour</td>
+      <td>Minimum 3 hours</td>
+    </tr>
+    <tr>
+      <td>Custom Furniture Assembly</td>
+      <td>Quoted based on images</td>
+      <td>Price varies by complexity</td>
+    </tr>
+    <tr>
+      <td>Gazebo Assembly</td>
+      <td>$400+</td>
+      <td>Quoted based on images</td>
+    </tr>
+  </table>
+  <p class="note">💡 Contact us for any installation needs, even if not listed above!</p>
+
+  <h3>🪚 Polishing & Renovation Services</h3>
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>Price</th>
+      <th>Remarks</th>
+    </tr>
+    <tr>
+      <td>Kitchen Counter Polishing</td>
+      <td>$200+</td>
+      <td>Price varies by material and size</td>
+    </tr>
+    <tr>
+      <td>Tile Corrosion Repairs</td>
+      <td>$240/sqm</td>
+      <td>Minimum 2 sqm</td>
+    </tr>
+    <tr>
+      <td>Full House Tile Polishing</td>
+      <td>Quoted on-site</td>
+      <td>Based on size and complexity</td>
+    </tr>
+    <tr>
+      <td>Wooden Floor Polishing</td>
+      <td>Quoted on-site</td>
+      <td>Based on size and damage</td>
+    </tr>
+  </table>
+  <p class="note">💡 We provide tailored solutions for both partial and full renovations!</p>
 </div>
 
 <script>
@@ -398,28 +470,25 @@
  * lang 参数可为 'zh' 或 'en'
  */
 function toggleBusinessHours(lang) {
-    const button = document.querySelector(`button[onclick="toggleBusinessHours('${lang}')"]`);
-    const section = document.getElementById(`business-hours-${lang}`);
+  const button = document.querySelector(`button[onclick="toggleBusinessHours('${lang}')"]`);
+  const section = document.getElementById(`business-hours-${lang}`);
 
-    // 简单的“加载中”动画模拟
-    button.innerText = "Loading...";
-    button.style.backgroundColor = "#0056b3";
+  // 简单的“加载中”动画模拟
+  button.innerText = "Loading...";
+  button.style.backgroundColor = "#0056b3";
 
-    setTimeout(() => {
-        if (section) {
-            section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
+  setTimeout(() => {
+    if (section) {
+      const isHidden = (section.style.display === 'none' || section.style.display === '');
+      section.style.display = isHidden ? 'block' : 'none';
 
-            // 恢复按钮文字和颜色
-            if (lang === 'zh') {
-                button.innerText = "营业时间";
-            } else {
-                button.innerText = "Business Hours";
-            }
-            button.style.backgroundColor = "#007BFF";
-        } else {
-            console.error(`Section for business hours (${lang}) not found.`);
-        }
-    }, 100);
+      // 恢复按钮文字和颜色
+      button.innerText = (lang === 'zh') ? "营业时间" : "Business Hours";
+      button.style.backgroundColor = "#007BFF";
+    } else {
+      console.error(`Section for business hours (${lang}) not found.`);
+    }
+  }, 100);
 }
 
 /**
@@ -427,30 +496,30 @@ function toggleBusinessHours(lang) {
  * lang 参数可为 'zh' 或 'en'
  */
 function switchLanguage(lang) {
-    // 先将所有 content 隐藏
-    document.querySelectorAll('.content').forEach(content => {
-        content.classList.add('hidden');
-    });
-    // 显示对应语言的 content
-    document.querySelector(`#content-${lang}`).classList.remove('hidden');
+  // 先将所有 content 隐藏
+  document.querySelectorAll('.content').forEach(content => {
+    content.classList.add('hidden');
+  });
+  // 显示对应语言的 content
+  document.querySelector(`#content-${lang}`).classList.remove('hidden');
 
-    // 更新按钮样式
-    document.getElementById('lang-zh').style.backgroundColor = (lang === 'zh') ? '#0056b3' : '#ddd';
-    document.getElementById('lang-zh').style.color = (lang === 'zh') ? 'white' : 'black';
-    document.getElementById('lang-en').style.backgroundColor = (lang === 'en') ? '#0056b3' : '#ddd';
-    document.getElementById('lang-en').style.color = (lang === 'en') ? 'white' : 'black';
+  // 更新按钮样式
+  document.getElementById('lang-zh').style.backgroundColor = (lang === 'zh') ? '#0056b3' : '#ddd';
+  document.getElementById('lang-zh').style.color = (lang === 'zh') ? 'white' : 'black';
+  document.getElementById('lang-en').style.backgroundColor = (lang === 'en') ? '#0056b3' : '#ddd';
+  document.getElementById('lang-en').style.color = (lang === 'en') ? 'white' : 'black';
 }
 
 /**
  * 跳转到工作历史
  */
 function navigateToWorkHistory() {
-    const button = document.querySelector('button[onclick="navigateToWorkHistory()"]');
-    button.innerText = "Loading...";
-    button.style.backgroundColor = "#0056b3";
-    setTimeout(() => {
-        window.location.href = 'https://github.com/apexfix/apexfix/wiki';
-    }, 100);
+  const button = document.querySelector('button[onclick="navigateToWorkHistory()"]');
+  button.innerText = "Loading...";
+  button.style.backgroundColor = "#0056b3";
+  setTimeout(() => {
+    window.location.href = 'https://github.com/apexfix/apexfix/wiki';
+  }, 100);
 }
 </script>
 
