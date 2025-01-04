@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>ApexFix | Adelaide Home Repair & Renovation Services</title>
 
-  <!-- 推荐将样式放到 styles.css 中，这里为了演示直接内联 -->
+  <!-- 内嵌 CSS，建议另存到 styles.css 中 -->
   <style>
-    /* ===== [通用样式重置] ===== */
+    /* ======= 通用重置 ======= */
     * {
       margin: 0; 
       padding: 0; 
@@ -15,7 +15,7 @@
     }
     body {
       font-family: "Helvetica Neue", Arial, sans-serif;
-      background: #f7f9fc;
+      background: #f7f9fc; /* 淡灰蓝背景 */
       color: #333;
       line-height: 1.6;
     }
@@ -24,14 +24,14 @@
       color: inherit;
     }
 
-    /* ===== [布局容器] ===== */
+    /* ======= 布局 ======= */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
 
-    /* ===== [语言切换] ===== */
+    /* ======= 语言切换 ======= */
     .language-switch {
       position: fixed;
       top: 20px;
@@ -52,14 +52,13 @@
       transition: background-color 0.2s ease;
     }
 
-    /* ===== [主要内容卡片] ===== */
+    /* ======= 内容卡片 ======= */
     .content-card {
       background: #fff;
       box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       border-radius: 8px;
       padding: 30px;
       margin: 60px 0;
-      position: relative;
     }
     .content-card h1 {
       font-size: 1.8rem;
@@ -68,7 +67,7 @@
       color: #333;
     }
 
-    /* ===== [按钮] ===== */
+    /* ======= 公共按钮 ======= */
     .common-button {
       margin: 10px 8px;
       padding: 10px 20px;
@@ -88,7 +87,7 @@
       margin-bottom: 20px;
     }
 
-    /* ===== [“营业时间”/“Business Hours” 展开区] ===== */
+    /* ======= 营业时间 ======= */
     .business-hours {
       margin-top: 10px;
       text-align: center;
@@ -99,7 +98,7 @@
       display: none;
     }
 
-    /* ===== [二维码] ===== */
+    /* ======= 二维码容器 ======= */
     .qrcode-container {
       text-align: center;
       margin: 20px 0;
@@ -109,7 +108,7 @@
       height: 150px;
     }
 
-    /* ===== [联系人信息区] ===== */
+    /* ======= 联系方式 ======= */
     .contact-section {
       text-align: center;
       border-bottom: 2px solid #ddd;
@@ -129,7 +128,7 @@
       color: #0056b3;
     }
 
-    /* ===== [信息提示条] ===== */
+    /* ======= 提示信息条 ======= */
     .info-banner {
       background: #f0f8ff;
       border-left: 5px solid #007BFF;
@@ -140,7 +139,7 @@
       color: #333;
     }
 
-    /* ===== [分区标题] ===== */
+    /* ======= 分区标题 ======= */
     .section-title {
       font-size: 1.4rem;
       margin: 40px 0 15px;
@@ -158,7 +157,7 @@
       border-radius: 2px;
     }
 
-    /* ===== [表格] ===== */
+    /* ======= 表格 ======= */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -180,7 +179,7 @@
       margin-bottom: 40px;
     }
 
-    /* ===== [响应式] ===== */
+    /* ======= 响应式 ======= */
     @media (max-width: 768px) {
       .content-card {
         margin: 40px 10px;
@@ -199,21 +198,23 @@
 </head>
 
 <body>
-  <!-- 语言切换按钮，固定右上角 -->
+  <!-- 语言切换按钮（固定右上角） -->
   <div class="language-switch">
     <button onclick="switchLanguage('zh')" id="lang-zh" style="background-color: #ddd; color: black;">中文</button>
     <button onclick="switchLanguage('en')" id="lang-en" style="background-color: #007BFF; color: white;">English</button>
   </div>
 
-  <!-- ================== 中文版内容 ================== -->
+  <!-- ====================== 中文版内容 ====================== -->
   <div id="content-zh" class="container hidden">
     <div class="content-card">
       <h1>✨ ApexFix | 阿德莱德家庭维修与翻新服务 ✨</h1>
 
+      <!-- 二维码 -->
       <div class="qrcode-container">
         <img src="images/wechat-qrcode.png" alt="WeChat QR Code" />
       </div>
 
+      <!-- 简介 -->
       <p style="text-align:center; font-size:16px;">
         我们专注于家庭维修和翻新，价格透明，服务周到，为您打造更舒适的家居环境！
       </p>
@@ -221,7 +222,6 @@
       <!-- 按钮区：营业时间 + 工作历史 -->
       <div class="button-row">
         <button class="common-button" onclick="toggleBusinessHours('zh')">营业时间</button>
-        <!-- 改为跳转 Facebook 上的工作历史 -->
         <button class="common-button" onclick="navigateToFacebook('zh')">查看工作历史</button>
 
         <div id="business-hours-zh" class="business-hours hidden">
@@ -229,13 +229,13 @@
         </div>
       </div>
 
-      <!-- 可在此补充一句引导语 -->
       <p style="text-align:center; font-size:16px; color:#555;">
-        在我们的 
-        <a href="https://www.facebook.com/share/1GzZFkAfdD/?mibextid=wwXIfr" target="_blank" style="color:#007BFF;">
+        在我们的
+        <a href="https://www.facebook.com/share/1GzZFkAfdD/?mibextid=wwXIfr" 
+           target="_blank" style="color:#007BFF;">
           Facebook主页
         </a>
-        查看更多工作实例与质量展示
+        查看更多工作实例与质量展示。
       </p>
 
       <!-- 联系方式 -->
@@ -255,16 +255,15 @@
         </p>
       </div>
 
-      <!-- 信息提示区 -->
       <div class="info-banner">
         如果您需要我们的帮助，请发送短信或邮件，我们会在当天回复所有信息。<br/>
         我们提供免费上门报价（针对大型项目），确保您不会因为初步判断失误而产生额外费用。
       </div>
 
-      <!-- 服务范围与价格标题 -->
+      <!-- 服务范围与价格 -->
       <h2 class="section-title">📋 服务范围与价格</h2>
       <p class="note">
-        以下价格表仅为部分项目的参考价格，并非全部经营项目。如有任何其他需求（翻新、粉刷、搭建凉棚等），欢迎随时与我们联系。
+        以下价格表仅为部分项目参考，并非全部经营项目。如果您家中遇到任何问题，或需要装修、粉刷墙壁、搭建凉棚等其他服务，欢迎随时联系我们。
       </p>
 
       <!-- 修补类 -->
@@ -297,7 +296,7 @@
         </tr>
       </table>
       <p class="note">
-        价格仅供参考，实际费用会根据施工难度和材料而有所调整。
+        价格仅供参考，实际费用可能因材料或施工难度而调整。
       </p>
 
       <!-- 疏通类 -->
@@ -326,11 +325,11 @@
         <tr>
           <td>全屋下水道堵塞</td>
           <td>$300 起</td>
-          <td>含内窥摄像机检查及高压清洗</td>
+          <td>包含内窥摄像机检查及高压清洗</td>
         </tr>
       </table>
       <p class="note">
-        我们具备专业设备和经验，能够快速解决普通或复杂管道堵塞。
+        我们具备专业设备，应对各种程度的管道堵塞。
       </p>
 
       <!-- 安装类 -->
@@ -383,7 +382,7 @@
         </tr>
       </table>
       <p class="note">
-        如有其他安装需求，请随时咨询，我们将提供专业建议和服务。
+        如有其他安装需求，欢迎咨询，我们将提供专业服务。
       </p>
 
       <!-- 打磨翻新类 -->
@@ -397,7 +396,7 @@
         <tr>
           <td>厨房台面打磨翻新</td>
           <td>$200 起</td>
-          <td>根据材质与面积</td>
+          <td>根据台面材质和面积</td>
         </tr>
         <tr>
           <td>瓷砖渗脏腐蚀修复</td>
@@ -416,27 +415,27 @@
         </tr>
       </table>
       <p class="note">
-        无论局部翻新还是整体打磨，我们都能提供满意的解决方案。
+        无论局部或整体打磨翻新，我们都能提供满意的解决方案。
       </p>
-    </div>
-  </div>
+    </div> <!-- /content-card -->
+  </div> <!-- /container zh -->
 
-  <!-- ================== 英文版内容 ================== -->
+  <!-- ====================== 英文版内容 ====================== -->
   <div id="content-en" class="container">
     <div class="content-card">
       <h1>✨ ApexFix | Adelaide Home Repair & Renovation Services ✨</h1>
 
+      <!-- QR Code -->
       <div class="qrcode-container">
         <img src="images/wechat-qrcode.png" alt="WeChat QR Code" />
       </div>
 
       <p style="text-align:center; font-size:16px;">
-        We specialize in home repairs and renovations with transparent pricing and quality service to make your home more comfortable!
+        We specialize in home repairs and renovations with transparent pricing and reliable services to make your home more comfortable!
       </p>
 
       <div class="button-row">
         <button class="common-button" onclick="toggleBusinessHours('en')">Business Hours</button>
-        <!-- Jump to Facebook for work history -->
         <button class="common-button" onclick="navigateToFacebook('en')">Work History on Facebook</button>
 
         <div id="business-hours-en" class="business-hours hidden">
@@ -445,14 +444,15 @@
       </div>
 
       <p style="text-align:center; font-size:16px; color:#555;">
-        Check our 
-        <a href="https://www.facebook.com/share/1GzZFkAfdD/?mibextid=wwXIfr" target="_blank" style="color:#007BFF;">
-          Facebook page
+        Check out our 
+        <a href="https://www.facebook.com/share/1GzZFkAfdD/?mibextid=wwXIfr" 
+           target="_blank" style="color:#007BFF;">
+           Facebook page
         </a>
-        for more work examples and quality assurance.
+        for more project examples and quality assurance.
       </p>
 
-      <!-- Contact Info -->
+      <!-- Contact Section -->
       <div class="contact-section">
         <h3>Contact Us</h3>
         <p class="contact-info">
@@ -470,16 +470,16 @@
       </div>
 
       <div class="info-banner">
-        If you need our services, please send us a text message or email and we will respond within the same day.<br/>
-        For larger projects, we offer free on-site quotes to ensure no unexpected costs due to misjudgments.
+        If you need our services, please send us a text message or email, and we will respond within the same day.<br/>
+        For larger projects, we offer free on-site quotes, ensuring no unexpected costs due to misjudgments.
       </div>
 
       <h2 class="section-title">📋 Scope of Services & Pricing</h2>
       <p class="note">
-        The price list below is just a reference for some of our services. If you need any other work (renovations, painting, gazebo construction, etc.), feel free to contact us.
+        The following price list is just a reference for some of our services, not a comprehensive list. Feel free to contact us for renovations, painting, gazebo construction, or any other needs.
       </p>
 
-      <!-- Example: Repair Services -->
+      <!-- Repair Services -->
       <h3>🛠️ Repair Services</h3>
       <table>
         <tr>
@@ -509,27 +509,132 @@
         </tr>
       </table>
       <p class="note">
-        Actual costs may vary depending on material and complexity.
+        Actual costs may vary depending on materials and complexity.
       </p>
 
-      <!-- 其余 Drainage, Installation, Polishing... 同理，不再重复 -->
+      <!-- Drainage Services -->
+      <h3>🚰 Drainage Services</h3>
+      <table>
+        <tr>
+          <th>Service</th>
+          <th>Price</th>
+          <th>Remarks</th>
+        </tr>
+        <tr>
+          <td>Kitchen Sink Drainage</td>
+          <td>$180+</td>
+          <td>Single blockage, variation within $60</td>
+        </tr>
+        <tr>
+          <td>Toilet Unblocking</td>
+          <td>$180+</td>
+          <td>Single blockage, variation within $60</td>
+        </tr>
+        <tr>
+          <td>Bathroom Basin Drainage</td>
+          <td>$150+</td>
+          <td>Single blockage, variation within $60</td>
+        </tr>
+        <tr>
+          <td>Main Drainage Pipe</td>
+          <td>$300+</td>
+          <td>Includes camera inspection & high-pressure cleaning</td>
+        </tr>
+      </table>
+      <p class="note">
+        From simple to complex blockages, we have the right tools for the job.
+      </p>
+
+      <!-- Installation Services -->
+      <h3>🔧 Installation Services</h3>
+      <table>
+        <tr>
+          <th>Service</th>
+          <th>Price</th>
+          <th>Remarks</th>
+        </tr>
+        <tr>
+          <td>Interior Door Installation</td>
+          <td>$150/door</td>
+          <td>$230 for two doors, $100/door for three or more</td>
+        </tr>
+        <tr>
+          <td>Interior Door Lock Installation</td>
+          <td>$150+</td>
+          <td>Price includes the lock</td>
+        </tr>
+        <tr>
+          <td>Main Door Electronic Lock</td>
+          <td>$200+</td>
+          <td>Labor only</td>
+        </tr>
+        <tr>
+          <td>IKEA Furniture Assembly</td>
+          <td>$60/hour</td>
+          <td>Minimum 3 hours</td>
+        </tr>
+        <tr>
+          <td>Custom Furniture Assembly</td>
+          <td>Quoted by images</td>
+          <td>Price varies by complexity</td>
+        </tr>
+        <tr>
+          <td>Gazebo Assembly</td>
+          <td>$400+</td>
+          <td>Quoted by images</td>
+        </tr>
+      </table>
+      <p class="note">
+        Contact us for any installation needs, even if not listed above.
+      </p>
+
+      <!-- Polishing & Renovation -->
+      <h3>🪚 Polishing & Renovation Services</h3>
+      <table>
+        <tr>
+          <th>Service</th>
+          <th>Price</th>
+          <th>Remarks</th>
+        </tr>
+        <tr>
+          <td>Kitchen Counter Polishing</td>
+          <td>$200+</td>
+          <td>Varies by material & size</td>
+        </tr>
+        <tr>
+          <td>Tile Corrosion Repairs</td>
+          <td>$240/sqm</td>
+          <td>Min 2 sqm</td>
+        </tr>
+        <tr>
+          <td>Full House Tile Polishing</td>
+          <td>On-site quote</td>
+          <td>Depends on area & complexity</td>
+        </tr>
+        <tr>
+          <td>Wooden Floor Polishing</td>
+          <td>On-site quote</td>
+          <td>Based on damage & size</td>
+        </tr>
+      </table>
+      <p class="note">
+        Whether partial or full-scale polishing, we provide tailored solutions.
+      </p>
     </div>
   </div>
 
-  <!-- =============== 脚本区域 =============== -->
+  <!-- ====================== JS区域 ====================== -->
   <script>
     /**
      * 切换语言
      */
     function switchLanguage(lang) {
       // 隐藏所有 container
-      document.querySelectorAll('.container').forEach(el => {
-        el.classList.add('hidden');
-      });
-      // 显示对应语言
+      document.querySelectorAll('.container').forEach(el => el.classList.add('hidden'));
+      // 显示对应
       document.getElementById(`content-${lang}`).classList.remove('hidden');
 
-      // 更新按钮高亮
+      // 更新按钮背景与文字色
       document.getElementById('lang-zh').style.backgroundColor = (lang === 'zh') ? '#007BFF' : '#ddd';
       document.getElementById('lang-zh').style.color = (lang === 'zh') ? '#fff' : '#000';
       document.getElementById('lang-en').style.backgroundColor = (lang === 'en') ? '#007BFF' : '#ddd';
@@ -537,7 +642,7 @@
     }
 
     /**
-     * 展开/收起“营业时间”/“Business Hours”
+     * 展开/收起营业时间
      */
     function toggleBusinessHours(lang) {
       const btn = document.querySelector(`button[onclick="toggleBusinessHours('${lang}')"]`);
@@ -558,7 +663,7 @@
     }
 
     /**
-     * 跳转 Facebook 工作历史
+     * 跳转Facebook工作历史
      */
     function navigateToFacebook(lang) {
       const btn = document.querySelector(`button[onclick="navigateToFacebook('${lang}')"]`);
@@ -570,7 +675,7 @@
       }, 150);
     }
 
-    // 默认显示英文，可改成 'zh' 若想默认中文
+    // 默认显示英文，可改为 'zh' 若想默认为中文
     switchLanguage('en');
   </script>
 </body>
